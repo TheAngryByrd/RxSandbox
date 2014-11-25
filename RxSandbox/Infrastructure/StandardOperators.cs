@@ -6,6 +6,7 @@ using System.Linq.Expressions;
 using System.ComponentModel;
 using System.Reactive;
 using System.Reactive.Linq;
+using System.Reactive.Threading.Tasks;
 
 namespace RxSandbox
 {
@@ -376,8 +377,8 @@ group s by s.Length
             var @operator = ReflectionHelper.GetMethod(
                 () => Observable.Buffer<string>(null,3));
 
-            return ExpressionDefinition.Create(expression, 
-                new ExpressionSettings{Operator = @operator});
+            return ExpressionDefinition.Create(expression,
+                new ExpressionSettings { Operator = @operator, Name = "BufferWithCount" });
         }
 
         [Expression]
@@ -392,8 +393,9 @@ group s by s.Length
                 () => Observable.Buffer<string>(null,TimeSpan.FromSeconds(3)));
 
             return ExpressionDefinition.Create(expression,
-                new ExpressionSettings { Operator = @operator });
+                new ExpressionSettings { Operator = @operator, Name = "BufferWithTime" });
         }
+    
 
     }
 
