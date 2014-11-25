@@ -1,0 +1,66 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:RxSandbox="clr-namespace:RxSandbox" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Class="RxSandbox.ExpressionControl"
+    mc:Ignorable="d" d:DesignWidth="466.702" d:DesignHeight="409.64">    
+	<UserControl.Resources>
+		<RxSandbox:ExpressionInstanceVM x:Key="ExpressionInstanceVMDataSource" d:IsDataSource="True"/>
+	</UserControl.Resources>
+    <Grid d:DataContext="{Binding Source={StaticResource ExpressionInstanceVMDataSource}}">
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition/>
+    		<ColumnDefinition/>
+    	</Grid.ColumnDefinitions>
+    	<Grid.RowDefinitions>
+    		<RowDefinition Height="Auto" />
+    		<RowDefinition Height="Auto"/>
+    		<RowDefinition Height="*"/>
+    		<RowDefinition Height="Auto"/>
+    	</Grid.RowDefinitions>
+		
+		<StackPanel   Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="0" d:LayoutOverrides="Width, Height">
+    		<Border  BorderThickness="1" BorderBrush="Black" Margin="5" CornerRadius="10"> 
+    			<TextBlock Text="{Binding Definition.Description}" Margin="3" Padding="3" TextWrapping="Wrap" />
+    		</Border>
+            <Border  BorderThickness="1" BorderBrush="Black" Margin="5" CornerRadius="10">
+                <TextBlock Text="{Binding Definition.ExpressionString}" Margin="3" Padding="3" TextWrapping="Wrap"/>
+            </Border>
+            
+    	</StackPanel>
+		
+		<Button Content="Reset" HorizontalAlignment="Left" Command="{Binding Reset}" Grid.Row="3" Grid.Column="0"/>
+    	<Button Content="Close" HorizontalAlignment="Right" Command="{Binding Close}"   Grid.Row="3" Grid.Column="1"/>
+		
+
+		
+		<GroupBox Header="Inputs" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1">
+    			<ItemsControl ItemsSource="{Binding Inputs}">
+    				<ItemsControl.ItemTemplate>
+    					<DataTemplate>
+    						<RxSandbox:InputControl/>
+    					</DataTemplate>
+    				</ItemsControl.ItemTemplate>
+    			</ItemsControl>
+    		</GroupBox>
+			
+    		<TabControl Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="2">
+    	
+    			<TabItem Header="Marble diagram - Definition">
+    				<Grid>
+    					<RxSandbox:MarbleDiagramControl Diagram="{Binding Definition.Diagram}"/>
+    				</Grid>
+    			</TabItem>
+                <TabItem Header="Marble diagram - Live">
+                    <Grid>
+                        <RxSandbox:MarbleDiagramControl Diagram="{Binding Diagram}"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Output" Margin="0">
+                    <Grid>
+                        <RxSandbox:OutputControl DataContext="{Binding Output}" />
+                    </Grid>
+                </TabItem>
+        </TabControl>
+			
+	</Grid>
+ </UserControl>

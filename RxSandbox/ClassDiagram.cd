@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RxSandbox.App" Collapsed="true">
+    <Position X="8.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.MethodCallCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Common\MethodCallCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RxSandbox.MethodCallCommandConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\MethodCallCommandConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RxSandbox.Extensions" Collapsed="true">
+    <Position X="13.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\TypeExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.TypeExtensions" Collapsed="true">
+    <Position X="17" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAARAAACAAAAAACAAAAAAAAAAAAkAAAA=</HashCode>
+      <FileName>Common\TypeExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.XmlComments" Collapsed="true">
+    <Position X="13.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\XmlComments.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.XmlSerializationHelper" Collapsed="true">
+    <Position X="15.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEACAAAAAAAAA=</HashCode>
+      <FileName>Common\XmlSerializationHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.ExpressionControl" Collapsed="true">
+    <Position X="17" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\ExpressionControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.HistoryControl" Collapsed="true">
+    <Position X="15.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\HistoryControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.InputControl" Collapsed="true">
+    <Position X="17" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\InputControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.MarbleControl" Collapsed="true">
+    <Position X="10" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\MarbleControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.MarbleDiagramControl" Collapsed="true">
+    <Position X="11.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAQAAAAAAgAAAEIEAAAAAAAAAAABAAEA=</HashCode>
+      <FileName>Controls\MarbleDiagramControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.OutputControl" Collapsed="true">
+    <Position X="17" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\OutputControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.Window3" Collapsed="true">
+    <Position X="11.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Window3.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.Marble">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <Members>
+      <Method Name="Marble" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAABAAAAAAAAAAAAAAAAAAAAIAAAgAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Diagram.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Kind" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RxSandbox.Series">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <Members>
+      <Method Name="Series" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Marbles" Type="RxSandbox.Marble">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.187" Y="0.11" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Diagram.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Marbles" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="RxSandbox.Diagram">
+    <Position X="9.5" Y="0.5" Width="1.75" />
+    <Members>
+      <Method Name="Diagram" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Diagram.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Output" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Inputs" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="RxSandbox.DiagramContainer" Collapsed="true">
+    <Position X="9.5" Y="2.25" Width="1.75" />
+    <Members>
+      <Method Name="DiagramContainer" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Diagrams" Type="RxSandbox.Diagram" FixedFromPoint="true">
+      <Path>
+        <Point X="10.312" Y="2.25" />
+        <Point X="10.312" Y="1.603" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Infrastructure\Diagram.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Diagrams" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="RxSandbox.ObservableSource">
+    <Position X="3.25" Y="3.5" Width="1.75" />
+    <Members>
+      <Property Name="Converter" Hidden="true" />
+      <Method Name="CreateTypeConverter" Hidden="true" />
+      <Method Name="ObservableSource" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAQACAAAAAAAAQAAAAAAAIA=</HashCode>
+      <FileName>Infrastructure\Model.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.ObservableInput">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <Members>
+      <Field Name="_observable" Hidden="true" />
+      <Property Name="IObservableInput.Observable" Hidden="true" />
+      <Method Name="ObservableInput" Hidden="true" />
+      <Method Name="OnCompleted" Hidden="true" />
+      <Method Name="OnError" Hidden="true" />
+      <Method Name="OnNext" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAACAAAIAAAQAAAQAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Model.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.565" Collapsed="true" />
+  </Class>
+  <Class Name="RxSandbox.ObservableInput&lt;T&gt;">
+    <Position X="7.25" Y="2.5" Width="1.75" />
+    <Members>
+      <Field Name="_observable" Hidden="true" />
+      <Property Name="IObservableInput.Observable" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAACAAAIAAAQAAAQAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Model.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.212" Collapsed="true" />
+  </Class>
+  <Class Name="RxSandbox.ObservableOutput&lt;T&gt;">
+    <Position X="0.75" Y="3.5" Width="2" />
+    <Members>
+      <Method Name="ObservableOutput" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Model.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.ExpressionDefinition">
+    <Position X="2.75" Y="0.5" Width="1.75" />
+    <Members>
+      <Field Name="_container" Hidden="true" />
+      <Property Name="CompiledExpression" Hidden="true" />
+      <Method Name="ExpressionDefinition" Hidden="true" />
+      <Method Name="GetOperator" Hidden="true" />
+      <Method Name="SetDiagram" Hidden="true" />
+      <Method Name="SetNameAndDescription" Hidden="true" />
+      <Property Name="SourceTypes" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>BAAAAAIAAIAgAADAAAAAACQAAAAAAEAAAIAAEAAAAAA=</HashCode>
+      <FileName>Infrastructure\Model.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.ExpressionInstance">
+    <Position X="4.75" Y="0.5" Width="1.75" />
+    <Members>
+      <Field Name="_diagramSeries" Hidden="true" />
+      <Method Name="BuildDiagram" Hidden="true" />
+      <Method Name="ExpressionInstance" Hidden="true" />
+      <Method Name="SetUpDiagram" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="RxSandbox.ExpressionInstance.Record" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Infrastructure\Model.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <AssociationLine Name="Inputs" Type="RxSandbox.ObservableInput" FixedToPoint="true">
+      <Path>
+        <Point X="5.75" Y="2.699" />
+        <Point X="5.75" Y="3.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.046" Y="0.516" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Output" Type="RxSandbox.ObservableSource" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.938" Y="2.699" />
+        <Point X="4.938" Y="3.125" />
+        <Point X="4.438" Y="3.125" />
+        <Point X="4.438" Y="3.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEIAACAAACAAIAAAAEAAAAEAAAAAAAAABEAA=</HashCode>
+      <FileName>Infrastructure\Model.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Output" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Inputs" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="RxSandbox.ExpressionSettings">
+    <Position X="0.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAIAgAAAAAAAAQAQAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Infrastructure\Model.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.StandardOperators" Collapsed="true">
+    <Position X="0.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIQAAAABEAAAAQAABCAACABAAAMIARABAIMAwAAAEAA=</HashCode>
+      <FileName>Infrastructure\StandardOperators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.CustomExpressions" Collapsed="true">
+    <Position X="3" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\StandardOperators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.Person" Collapsed="true">
+    <Position X="8.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\StandardOperators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.PersonConverter" Collapsed="true">
+    <Position X="10" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\StandardOperators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.ExpressionAttribute" Collapsed="true">
+    <Position X="15.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\StandardOperators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.ExpressionAttributeBasedProvider" Collapsed="true">
+    <Position X="2" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Infrastructure\StandardOperators.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RxSandbox.ViewModelBase" Collapsed="true">
+    <Position X="3.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAoAAAAQAAgAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\ViewModeBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RxSandbox.ObservableSourceVM" Collapsed="true">
+    <Position X="4.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAgAAQAAAACAAAAAAA=</HashCode>
+      <FileName>Infrastructure\ViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.ObservableInputVM" Collapsed="true">
+    <Position X="3.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAEAAAAAKAAAIAgAAAAAQAAACAAAAAGAAgAAAAAAA=</HashCode>
+      <FileName>Infrastructure\ViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.ObservableOutputVM" Collapsed="true">
+    <Position X="5.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\ViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.ExpressionInstanceVM" Collapsed="true">
+    <Position X="1" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAACAAIQADABAAAAIACAEGAAAAAAAAAEAAACAAAA=</HashCode>
+      <FileName>Infrastructure\ViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.Window1" Collapsed="true">
+    <Position X="8.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Window1.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.Window2" Collapsed="true">
+    <Position X="10" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAgAAACAAAAAAA=</HashCode>
+      <FileName>Window2.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.Infrastructure.DelegateCommand&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAACgAQAEMYAAAAAAAAgAABAAAAAAAAAAEA=</HashCode>
+      <FileName>Common\DelegateCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RxSandbox.Properties.Resources" Collapsed="true">
+    <Position X="11.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RxSandbox.Properties.Settings" Collapsed="true">
+    <Position X="15.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAIAAAAAABIAAAAAAEAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="RxSandbox.IObservableInput" Collapsed="true">
+    <Position X="10" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Model.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RxSandbox.IExpressionProvider" Collapsed="true">
+    <Position X="8.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Infrastructure\StandardOperators.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="System.Collections.Generic.NotificationKind">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,573 @@
+<DiagramContainer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Diagram Id="Merge">
+    <Input Name="a">
+      <Marble Value="a" Order="0" />
+      <Marble Value="b" Order="1" />
+      <Marble Kind="OnCompleted" Order="4" />
+    </Input>
+    <Input Name="b">
+      <Marble Value="c" Order="2" />
+      <Marble Value="e" Order="5" />
+      <Marble Kind="OnCompleted" Order="6" />
+    </Input>
+    <Input Name="c">
+      <Marble Value="d" Order="3" />
+      <Marble Value="f" Order="7" />
+      <Marble Kind="OnCompleted" Order="8" />
+    </Input>
+    <Output>
+      <Marble Value="a" Order="0" />
+      <Marble Value="b" Order="1" />
+      <Marble Value="c" Order="2" />
+      <Marble Value="d" Order="3" />
+      <Marble Value="e" Order="5" />
+      <Marble Value="f" Order="7" />
+      <Marble Kind="OnCompleted" Order="8" />
+    </Output>
+  </Diagram>
+  <Diagram Id="Zip">
+    <Input Name="a">
+      <Marble Value="a" Order="0" />
+      <Marble Value="b" Order="1" />
+      <Marble Value="c" Order="2" />
+      <Marble Value="e" Order="4" />
+      <Marble Kind="OnCompleted" Order="6" />
+    </Input>
+    <Input Name="b">
+      <Marble Value="d" Order="3" />
+      <Marble Value="f" Order="5" />
+      <Marble Value="g" Order="7" />
+      <Marble Kind="OnCompleted" Order="8" />
+    </Input>
+    <Output>
+      <Marble Value="a - d" Order="3" />
+      <Marble Value="b - f" Order="5" />
+      <Marble Value="c - g" Order="7" />
+      <Marble Kind="OnCompleted" Order="8" />
+    </Output>
+  </Diagram>
+  <Diagram Id="CombineLatest">
+    <Input Name="a">
+      <Marble Value="a" Order="0" />
+      <Marble Value="e" Order="4" />
+      <Marble Kind="OnCompleted" Order="6" />
+    </Input>
+    <Input Name="b">
+      <Marble Value="b" Order="1" />
+      <Marble Value="c" Order="2" />
+      <Marble Value="d" Order="3" />
+      <Marble Value="f" Order="5" />
+      <Marble Value="g" Order="7" />
+      <Marble Kind="OnCompleted" Order="8" />
+    </Input>
+    <Output>
+      <Marble Value="a - b" Order="1" />
+      <Marble Value="a - c" Order="2" />
+      <Marble Value="a - d" Order="3" />
+      <Marble Value="e - d" Order="4" />
+      <Marble Value="e - f" Order="5" />
+      <Marble Value="e - g" Order="7" />
+      <Marble Kind="OnCompleted" Order="8" />
+    </Output>
+  </Diagram>
+  <Diagram Id="Amb">
+    <Input Name="a">
+      <Marble Value="a" Order="0" />
+      <Marble Value="d" Order="3" />
+      <Marble Value="f" Order="5" />
+      <Marble Kind="OnCompleted" Order="8" />
+    </Input>
+    <Input Name="b">
+      <Marble Value="b" Order="1" />
+      <Marble Value="c" Order="2" />
+      <Marble Value="e" Order="4" />
+      <Marble Value="g" Order="6" />
+      <Marble Kind="OnCompleted" Order="7" />
+    </Input>
+    <Output>
+      <Marble Value="a" Order="0" />
+      <Marble Value="d" Order="3" />
+      <Marble Value="f" Order="5" />
+      <Marble Kind="OnCompleted" Order="8" />
+    </Output>
+  </Diagram>
+  <Diagram Id="ForkJoin">
+    <Input Name="a">
+      <Marble Value="a" Order="0" />
+      <Marble Value="b" Order="1" />
+      <Marble Value="f" Order="6" />
+      <Marble Value="g" Order="7" />
+      <Marble Kind="OnCompleted" Order="10" />
+    </Input>
+    <Input Name="b">
+      <Marble Value="c" Order="2" />
+      <Marble Value="d" Order="4" />
+      <Marble Value="e" Order="5" />
+      <Marble Value="h" Order="8" />
+      <Marble Kind="OnCompleted" Order="9" />
+    </Input>
+    <Output>
+      <Marble Value="a - c" Order="2" />
+      <Marble Kind="OnCompleted" Order="3" />
+    </Output>
+  </Diagram>
+  <Diagram Id="Concat">
+    <Input Name="a">
+      <Marble Value="c" Order="2" />
+      <Marble Value="d" Order="3" />
+      <Marble Value="e" Order="4" />
+      <Marble Kind="OnCompleted" Order="6" />
+    </Input>
+    <Input Name="b">
+      <Marble Value="a" Order="0" />
+      <Marble Value="b" Order="1" />
+      <Marble Value="f" Order="5" />
+      <Marble Value="g" Order="7" />
+      <Marble Value="h" Order="8" />
+      <Marble Kind="OnCompleted" Order="9" />
+    </Input>
+    <Output>
+      <Marble Value="c" Order="2" />
+      <Marble Value="d" Order="3" />
+      <Marble Value="e" Order="4" />
+      <Marble Value="g" Order="7" />
+      <Marble Value="h" Order="8" />
+      <Marble Kind="OnCompleted" Order="9" />
+    </Output>
+  </Diagram>
+  <Diagram Id="Take">
+    <Input Name="a">
+      <Marble Value="a" Order="0" />
+      <Marble Value="b" Order="1" />
+      <Marble Value="c" Order="2" />
+      <Marble Value="d" Order="3" />
+      <Marble Value="e" Order="5" />
+      <Marble Value="f" Order="6" />
+      <Marble Kind="OnCompleted" Order="7" />
+    </Input>
+    <Output>
+      <Marble Value="a" Order="0" />
+      <Marble Value="b" Order="1" />
+      <Marble Value="c" Order="2" />
+      <Marble Value="d" Order="3" />
+      <Marble Kind="OnCompleted" Order="4" />
+    </Output>
+  </Diagram>
+  <Diagram Id="TakeWhile">
+    <Input Name="a">
+      <Marble Value="a" Order="0" />
+      <Marble Value="aa" Order="1" />
+      <Marble Value="aaa" Order="2" />
+      <Marble Value="aaaa" Order="3" />
+      <Marble Value="aaaaa" Order="4" />
+      <Marble Value="a" Order="5" />
+      <Marble Value="aa" Order="6" />
+      <Marble Value="aaa" Order="7" />
+      <Marble Kind="OnCompleted" Order="8" />
+    </Input>
+    <Output>
+      <Marble Value="a" Order="0" />
+      <Marble Value="aa" Order="1" />
+      <Marble Kind="OnCompleted" Order="2" />
+    </Output>
+  </Diagram>
+  <Diagram Id="TakeUntil">
+    <Input Name="a">
+      <Marble Value="a" Order="0" />
+      <Marble Value="b" Order="1" />
+      <Marble Value="d" Order="3" />
+      <Marble Value="e" Order="4" />
+      <Marble Kind="OnCompleted" Order="7" />
+    </Input>
+    <Input Name="b">
+      <Marble Value="c" Order="2" />
+      <Marble Value="f" Order="5" />
+      <Marble Kind="OnCompleted" Order="6" />
+    </Input>
+    <Output>
+      <Marble Value="a" Order="0" />
+      <Marble Value="b" Order="1" />
+      <Marble Kind="OnCompleted" Order="2" />
+    </Output>
+  </Diagram>
+  <Diagram Id="Skip">
+    <Input Name="a">
+      <Marble Value="a" Order="0" />
+      <Marble Value="b" Order="1" />
+      <Marble Value="c" Order="2" />
+      <Marble Value="d" Order="3" />
+      <Marble Value="e" Order="4" />
+      <Marble Value="f" Order="5" />
+      <Marble Kind="OnCompleted" Order="6" />
+    </Input>
+    <Output>
+      <Marble Value="e" Order="4" />
+      <Marble Value="f" Order="5" />
+      <Marble Kind="OnCompleted" Order="6" />
+    </Output>
+  </Diagram>
+  <Diagram Id="SkipWhile">
+    <Input Name="a">
+      <Marble Value="a" Order="0" />
+      <Marble Value="aa" Order="1" />
+      <Marble Value="aaa" Order="2" />
+      <Marble Value="aaaa" Order="3" />
+      <Marble Value="aaaaa" Order="4" />
+      <Marble Value="a" Order="5" />
+      <Marble Value="aa" Order="6" />
+      <Marble Value="aaa" Order="7" />
+      <Marble Kind="OnCompleted" Order="8" />
+    </Input>
+    <Output>
+      <Marble Value="aaa" Order="2" />
+      <Marble Value="aaaa" Order="3" />
+      <Marble Value="aaaaa" Order="4" />
+      <Marble Value="a" Order="5" />
+      <Marble Value="aa" Order="6" />
+      <Marble Value="aaa" Order="7" />
+      <Marble Kind="OnCompleted" Order="8" />
+    </Output>
+  </Diagram>
+  <Diagram Id="SkipUntil">
+    <Input Name="a">
+      <Marble Value="a" Order="0" />
+      <Marble Value="b" Order="1" />
+      <Marble Value="d" Order="3" />
+      <Marble Value="e" Order="4" />
+      <Marble Kind="OnCompleted" Order="7" />
+    </Input>
+    <Input Name="b">
+      <Marble Value="c" Order="2" />
+      <Marble Value="f" Order="5" />
+      <Marble Kind="OnCompleted" Order="6" />
+    </Input>
+    <Output>
+      <Marble Value="d" Order="3" />
+      <Marble Value="e" Order="4" />
+      <Marble Kind="OnCompleted" Order="7" />
+    </Output>
+  </Diagram>
+  <Diagram Id="Where">
+    <Input Name="a">
+      <Marble Value="a" Order="0" />
+      <Marble Value="aa" Order="1" />
+      <Marble Value="aaa" Order="2" />
+      <Marble Value="aaaa" Order="3" />
+      <Marble Value="aaaaa" Order="4" />
+      <Marble Value="aaaaaa" Order="5" />
+      <Marble Kind="OnCompleted" Order="6" />
+    </Input>
+    <Output>
+      <Marble Value="aa" Order="1" />
+      <Marble Value="aaaa" Order="3" />
+      <Marble Value="aaaaaa" Order="5" />
+      <Marble Kind="OnCompleted" Order="6" />
+    </Output>
+  </Diagram>
+  <Diagram Id="Select">
+    <Input Name="a">
+      <Marble Value="a" Order="0" />
+      <Marble Value="aa" Order="1" />
+      <Marble Value="aaa" Order="2" />
+      <Marble Value="aaaa" Order="3" />
+      <Marble Value="aaaaa" Order="4" />
+      <Marble Value="aaaaaa" Order="5" />
+      <Marble Kind="OnCompleted" Order="6" />
+    </Input>
+    <Output>
+      <Marble Value="1" Order="0" />
+      <Marble Value="2" Order="1" />
+      <Marble Value="3" Order="2" />
+      <Marble Value="4" Order="3" />
+      <Marble Value="5" Order="4" />
+      <Marble Value="6" Order="5" />
+      <Marble Kind="OnCompleted" Order="6" />
+    </Output>
+  </Diagram>
+  <Diagram Id="SelectMany">
+    <Input Name="a">
+      <Marble Value="2" Order="0" />
+      <Marble Kind="OnCompleted" Order="1" />
+    </Input>
+    <Output>
+      <Marble Value="2" Order="2" />
+      <Marble Value="2" Order="3" />
+      <Marble Kind="OnCompleted" Order="4" />
+    </Output>
+  </Diagram>
+  <Diagram Id="Aggregate">
+    <Input Name="a">
+      <Marble Value="a" Order="0" />
+      <Marble Value="aa" Order="1" />
+      <Marble Value="aaa" Order="2" />
+      <Marble Value="aa" Order="3" />
+      <Marble Value="a" Order="4" />
+      <Marble Kind="OnCompleted" Order="5" />
+    </Input>
+    <Output>
+      <Marble Value="9" Order="5" />
+      <Marble Kind="OnCompleted" Order="6" />
+    </Output>
+  </Diagram>
+  <Diagram Id="Count">
+    <Input Name="a">
+      <Marble Value="a" Order="0" />
+      <Marble Value="b" Order="1" />
+      <Marble Value="c" Order="2" />
+      <Marble Value="d" Order="3" />
+      <Marble Kind="OnCompleted" Order="4" />
+    </Input>
+    <Output>
+      <Marble Value="4" Order="4" />
+      <Marble Kind="OnCompleted" Order="5" />
+    </Output>
+  </Diagram>
+  <Diagram Id="Sum">
+    <Input Name="a">
+      <Marble Value="2" Order="0" />
+      <Marble Value="123" Order="1" />
+      <Marble Value="55" Order="2" />
+      <Marble Value="-50" Order="3" />
+      <Marble Kind="OnCompleted" Order="4" />
+    </Input>
+    <Output>
+      <Marble Value="130" Order="4" />
+      <Marble Kind="OnCompleted" Order="5" />
+    </Output>
+  </Diagram>
+  <Diagram Id="Max">
+    <Input Name="a">
+      <Marble Value="2" Order="0" />
+      <Marble Value="123" Order="1" />
+      <Marble Value="55" Order="2" />
+      <Marble Value="-50" Order="3" />
+      <Marble Kind="OnCompleted" Order="4" />
+    </Input>
+    <Output>
+      <Marble Value="123" Order="4" />
+      <Marble Kind="OnCompleted" Order="5" />
+    </Output>
+  </Diagram>
+  <Diagram Id="Min">
+    <Input Name="a">
+      <Marble Value="2" Order="0" />
+      <Marble Value="123" Order="1" />
+      <Marble Value="55" Order="2" />
+      <Marble Value="-50" Order="3" />
+      <Marble Kind="OnCompleted" Order="4" />
+    </Input>
+    <Output>
+      <Marble Value="-50" Order="4" />
+      <Marble Kind="OnCompleted" Order="5" />
+    </Output>
+  </Diagram>
+  <Diagram Id="Average">
+    <Input Name="a">
+      <Marble Value="2" Order="0" />
+      <Marble Value="123" Order="1" />
+      <Marble Value="55" Order="2" />
+      <Marble Value="-50" Order="3" />
+      <Marble Kind="OnCompleted" Order="4" />
+    </Input>
+    <Output>
+      <Marble Value="32,5" Order="4" />
+      <Marble Kind="OnCompleted" Order="5" />
+    </Output>
+  </Diagram>
+  <Diagram Id="All">
+    <Input Name="a">
+      <Marble Value="a" Order="0" />
+      <Marble Value="aa" Order="1" />
+      <Marble Value="aaa" Order="2" />
+      <Marble Value="aaaa" Order="4" />
+      <Marble Kind="OnCompleted" Order="5" />
+    </Input>
+    <Output>
+      <Marble Value="False" Order="2" />
+      <Marble Kind="OnCompleted" Order="3" />
+    </Output>
+  </Diagram>
+  <Diagram Id="Any">
+    <Input Name="a">
+      <Marble Value="aaaa" Order="0" />
+      <Marble Value="aaa" Order="1" />
+      <Marble Value="aa" Order="2" />
+      <Marble Value="a" Order="4" />
+      <Marble Kind="OnCompleted" Order="5" />
+    </Input>
+    <Output>
+      <Marble Value="True" Order="2" />
+      <Marble Kind="OnCompleted" Order="3" />
+    </Output>
+  </Diagram>
+  <Diagram Id="GroupBy">
+    <Input Name="a">
+      <Marble Value="a" Order="0" />
+      <Marble Value="a" Order="1" />
+      <Marble Value="aa" Order="2" />
+      <Marble Value="aaa" Order="3" />
+      <Marble Value="aaa" Order="4" />
+      <Marble Value="aa" Order="5" />
+      <Marble Value="a" Order="6" />
+      <Marble Value="a" Order="7" />
+      <Marble Value="a" Order="8" />
+      <Marble Kind="OnCompleted" Order="9" />
+    </Input>
+    <Output>
+      <Marble Value="Key: 1  Value: a" Order="0" />
+      <Marble Value="Key: 1  Value: a" Order="1" />
+      <Marble Value="Key: 2  Value: aa" Order="2" />
+      <Marble Value="Key: 3  Value: aaa" Order="3" />
+      <Marble Value="Key: 3  Value: aaa" Order="4" />
+      <Marble Value="Key: 2  Value: aa" Order="5" />
+      <Marble Value="Key: 1  Value: a" Order="6" />
+      <Marble Value="Key: 1  Value: a" Order="7" />
+      <Marble Value="Key: 1  Value: a" Order="8" />
+      <Marble Kind="OnCompleted" Order="9" />
+    </Output>
+  </Diagram>
+  <Diagram Id="Delay">
+    <Input Name="a">
+      <Marble Value="16 marca 2010 07:45:16" Order="0" />
+      <Marble Value="16 marca 2010 07:45:17" Order="1" />
+      <Marble Kind="OnCompleted" Order="2" />
+    </Input>
+    <Output />
+  </Diagram>
+  <Diagram Id="Throttle">
+    <Input Name="a">
+      <Marble Value="16 marca 2010 07:45:17" Order="0" />
+      <Marble Value="16 marca 2010 07:45:17" Order="1" />
+      <Marble Value="16 marca 2010 07:45:20" Order="3" />
+      <Marble Value="16 marca 2010 07:45:20" Order="4" />
+      <Marble Kind="OnCompleted" Order="5" />
+    </Input>
+    <Output>
+      <Marble Value="16 marca 2010 07:45:17" Order="2" />
+      <Marble Value="16 marca 2010 07:45:20" Order="5" />
+      <Marble Kind="OnCompleted" Order="6" />
+    </Output>
+  </Diagram>
+  <Diagram Id="Sample">
+    <Input Name="a">
+      <Marble Value="16 marca 2010 07:45:20" Order="0" />
+      <Marble Value="16 marca 2010 07:45:20" Order="1" />
+      <Marble Value="16 marca 2010 07:45:24" Order="3" />
+      <Marble Value="16 marca 2010 07:45:24" Order="4" />
+      <Marble Kind="OnCompleted" Order="5" />
+    </Input>
+    <Output>
+      <Marble Value="16 marca 2010 07:45:20" Order="2" />
+    </Output>
+  </Diagram>
+  <Diagram Id="DistinctUntilChanged">
+    <Input Name="a">
+      <Marble Value="a" Order="0" />
+      <Marble Value="b" Order="1" />
+      <Marble Value="b" Order="2" />
+      <Marble Value="b" Order="3" />
+      <Marble Value="c" Order="4" />
+      <Marble Value="c" Order="5" />
+      <Marble Kind="OnCompleted" Order="6" />
+    </Input>
+    <Output>
+      <Marble Value="a" Order="0" />
+      <Marble Value="b" Order="1" />
+      <Marble Value="c" Order="4" />
+      <Marble Kind="OnCompleted" Order="6" />
+    </Output>
+  </Diagram>
+  <Diagram Id="Scan">
+    <Input Name="a">
+      <Marble Value="a" Order="0" />
+      <Marble Value="aa" Order="1" />
+      <Marble Value="aaa" Order="2" />
+      <Marble Value="aa" Order="3" />
+      <Marble Value="a" Order="4" />
+      <Marble Kind="OnCompleted" Order="5" />
+    </Input>
+    <Output>
+      <Marble Value="1" Order="0" />
+      <Marble Value="3" Order="1" />
+      <Marble Value="6" Order="2" />
+      <Marble Value="8" Order="3" />
+      <Marble Value="9" Order="4" />
+      <Marble Kind="OnCompleted" Order="5" />
+    </Output>
+  </Diagram>
+  <Diagram Id="BufferWithCount">
+    <Input Name="a">
+      <Marble Value="a" Order="0" />
+      <Marble Value="b" Order="1" />
+      <Marble Value="c" Order="2" />
+      <Marble Value="d" Order="3" />
+      <Marble Value="e" Order="4" />
+      <Marble Value="f" Order="5" />
+      <Marble Value="g" Order="6" />
+      <Marble Kind="OnCompleted" Order="7" />
+    </Input>
+    <Output>
+      <Marble Value="a,b,c" Order="2" />
+      <Marble Value="d,e,f" Order="5" />
+      <Marble Value="g" Order="7" />
+      <Marble Kind="OnCompleted" Order="8" />
+    </Output>
+  </Diagram>
+  <Diagram Id="BufferWithTime">
+    <Input Name="a">
+      <Marble Value="a" Order="0" />
+      <Marble Value="b" Order="1" />
+      <Marble Value="c" Order="2" />
+      <Marble Value="d" Order="4" />
+      <Marble Value="e" Order="5" />
+      <Marble Kind="OnCompleted" Order="6" />
+    </Input>
+    <Output>
+      <Marble Value="a,b,c" Order="3" />
+      <Marble Value="d,e" Order="6" />
+      <Marble Kind="OnCompleted" Order="7" />
+    </Output>
+  </Diagram>
+  <Diagram Id="Catch">
+    <Input Name="a">
+      <Marble Value="c" Order="2" />
+      <Marble Value="d" Order="3" />
+      <Marble Value="e" Order="4" />
+      <Marble Kind="OnError" Order="5" />
+    </Input>
+    <Input Name="b">
+      <Marble Value="a" Order="0" />
+      <Marble Value="b" Order="1" />
+      <Marble Value="f" Order="6" />
+      <Marble Value="g" Order="7" />
+    </Input>
+    <Output>
+      <Marble Value="c" Order="2" />
+      <Marble Value="d" Order="3" />
+      <Marble Value="e" Order="4" />
+      <Marble Value="f" Order="6" />
+      <Marble Value="g" Order="7" />
+    </Output>
+  </Diagram>
+  <Diagram Id="OnErrorResumeNext">
+    <Input Name="a">
+      <Marble Value="c" Order="2" />
+      <Marble Value="d" Order="3" />
+      <Marble Value="e" Order="4" />
+      <Marble Kind="OnCompleted" Order="5" />
+    </Input>
+    <Input Name="b">
+      <Marble Value="a" Order="0" />
+      <Marble Value="b" Order="1" />
+      <Marble Value="f" Order="6" />
+      <Marble Value="g" Order="7" />
+    </Input>
+    <Output>
+      <Marble Value="c" Order="2" />
+      <Marble Value="d" Order="3" />
+      <Marble Value="e" Order="4" />
+      <Marble Value="f" Order="6" />
+      <Marble Value="g" Order="7" />
+    </Output>
+  </Diagram>
+</DiagramContainer>

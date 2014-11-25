@@ -1,0 +1,132 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:RxSandbox="clr-namespace:RxSandbox" mc:Ignorable="d" xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero">
+	<!-- Resource dictionary entries should be defined here. -->
+	
+	<ControlTemplate x:Key="t:OnNext" TargetType="{x:Type UserControl}">
+		<Grid Width="20" Height="20">
+			<Ellipse Stroke="Black" Fill="#FF656A32">
+				<Ellipse.ToolTip>			     
+					<TextBlock Text="{Binding Value, Mode=Default}" />                
+				</Ellipse.ToolTip>
+			</Ellipse>
+		</Grid>
+	</ControlTemplate>
+	
+	<Style x:Key="s:OnNext" TargetType="{x:Type UserControl}">
+		<Setter Property="Template" Value="{StaticResource t:OnNext}"/>			
+	</Style>
+		
+	<ControlTemplate x:Key="t:OnCompleted">
+		<Grid Width="30" Height="30">
+			<Rectangle Fill="Black" Stroke="Black" HorizontalAlignment="Center" Width="9.25" />			
+		</Grid>
+	</ControlTemplate>
+
+    <Style x:Key="s:OnCompleted" TargetType="{x:Type UserControl}">
+        <Setter Property="Template" Value="{StaticResource t:OnCompleted}"/>
+    </Style>
+    
+    <ControlTemplate x:Key="t:OnError">
+		<Grid Width="30" Height="30">
+			<Rectangle Fill="Black" Stroke="Black" HorizontalAlignment="Right" Width="7.58" RenderTransformOrigin="0.5,0.5" Margin="0,0.054,10.887,-0.046">
+				<Rectangle.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform Angle="45.268"/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Rectangle.RenderTransform>
+			</Rectangle>
+			<Rectangle Fill="Black" Stroke="Black" Margin="11.876,0.373,0,-0.725" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="6.699">
+				<Rectangle.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform Angle="135.274"/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Rectangle.RenderTransform>
+			</Rectangle>
+			
+		</Grid>
+	</ControlTemplate>
+
+    <Style x:Key="s:OnError" TargetType="{x:Type UserControl}">
+        <Setter Property="Template" Value="{StaticResource t:OnError}"/>
+    </Style>
+    
+
+
+	
+
+    <RxSandbox:Diagram x:Key="diagram" d:IsDataSource="True" >
+        <RxSandbox:Diagram.Output>
+            <RxSandbox:Series Name="b">
+                <RxSandbox:Marble Value="one - 1" Order="2" />
+                <RxSandbox:Marble Value="two - 2" Order="3" />
+                <RxSandbox:Marble Value="tree - 3" Order="6" />
+                <RxSandbox:Marble Kind="OnCompleted" Order="7" />
+            </RxSandbox:Series>
+        </RxSandbox:Diagram.Output>
+    	<RxSandbox:Series Name="a">
+    		<RxSandbox:Marble Value="one" Order="0" />
+    		<RxSandbox:Marble Value="two" Order="1" />
+    		<RxSandbox:Marble Value="tree" Order="6" />
+    		<RxSandbox:Marble Value="four" Order="7" />
+    		<RxSandbox:Marble Kind="OnCompleted" Order="8" />
+    	</RxSandbox:Series>
+    	<RxSandbox:Series Name="b">
+    		<RxSandbox:Marble Value="1" Order="2" />
+    		<RxSandbox:Marble Value="2" Order="3" />
+    		<RxSandbox:Marble Value="3" Order="4" />
+    		<RxSandbox:Marble Kind="OnCompleted" Order="5" />
+    	</RxSandbox:Series>
+    </RxSandbox:Diagram>
+    
+    
+
+    
+    
+	<DataTemplate x:Key="t:diagramTest">
+		<Grid Width="344" Height="344">
+			<RxSandbox:MarbleDiagramControl DataContext="{StaticResource diagram}"  />
+		</Grid>
+            
+	</DataTemplate>    
+	    <ControlTemplate x:Key="temp" TargetType="{x:Type UserControl}">
+	    	<Grid/>
+	    </ControlTemplate>
+
+	<LinearGradientBrush x:Key="TextBoxBorder" EndPoint="0,20" StartPoint="0,0" MappingMode="Absolute">
+		<GradientStop Color="#ABADB3" Offset="0.05"/>
+		<GradientStop Color="#E2E3EA" Offset="0.07"/>
+		<GradientStop Color="#E3E9EF" Offset="1"/>
+	</LinearGradientBrush>
+	<Style x:Key="test" BasedOn="{x:Null}" TargetType="{x:Type TextBox}">
+		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+		<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+		<Setter Property="BorderBrush" Value="{StaticResource TextBoxBorder}"/>
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="Padding" Value="1"/>
+		<Setter Property="AllowDrop" Value="true"/>
+		<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type TextBox}">
+					<Microsoft_Windows_Themes:ListBoxChrome x:Name="Bd" SnapsToDevicePixels="true" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" RenderFocused="{TemplateBinding IsKeyboardFocusWithin}" RenderMouseOver="{TemplateBinding IsMouseOver}">
+						<ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+					</Microsoft_Windows_Themes:ListBoxChrome>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+							<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+</ResourceDictionary>
