@@ -53,16 +53,7 @@ namespace RxSandbox
 
             return ExpressionDefinition.Create(expression);
         }
-        //TODO: ForkJoin
-        //[Expression]
-        //public static ExpressionDefinition ForkJoin()
-        //{
-        //    Expression<Func<IObservable<string>, IObservable<string>,
-        //        IObservable<string>>> expression
-        //            = (a, b) => a.ForkJoin(b, (x, y) => x + " - " + y);
 
-        //    return ExpressionDefinition.Create(expression);
-        //}
 
         [Expression]
         public static ExpressionDefinition Concat()
