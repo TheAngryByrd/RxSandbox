@@ -395,7 +395,35 @@ group s by s.Length
             return ExpressionDefinition.Create(expression,
                 new ExpressionSettings { Operator = @operator, Name = "BufferWithTime" });
         }
-    
+        [Expression]
+        public static ExpressionDefinition WindowWithCount()
+        {
+            Expression<Func<IObservable<string>,
+                IObservable<string>>> expression
+                    = a => a.Window(3).
+                        Select(i => string.Join(",", i.ToArray()));
+
+            var @operator = ReflectionHelper.GetMethod(
+                () => Observable.Window<string>(null, 3));
+
+            return ExpressionDefinition.Create(expression,
+                new ExpressionSettings { Operator = @operator });
+        }
+
+        [Expression]
+        public static ExpressionDefinition WindowWithTime()
+        {
+            Expression<Func<IObservable<string>,
+                IObservable<string>>> expression
+                    = a => a.Window(TimeSpan.FromSeconds(3)).
+                        Select(i => string.Join(",", i.ToArray()));
+
+            var @operator = ReflectionHelper.GetMethod(
+                () => Observable.Window<string>(null, TimeSpan.FromSeconds(3)));
+
+            return ExpressionDefinition.Create(expression,
+                new ExpressionSettings { Operator = @operator });
+        }
 
     }
 
