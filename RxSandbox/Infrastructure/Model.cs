@@ -6,6 +6,9 @@ using System.IO;
 using System.Linq;
 using System.ComponentModel;
 using System.Linq.Expressions;
+using System.Reactive;
+using System.Reactive.Linq;
+using System.Reactive.Subjects;
 using System.Reflection;
 using RxSandbox.Properties;
 

@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reactive;
+using System.Reactive.Concurrency;
+using System.Reactive.Linq;
 using RxSandbox.Infrastructure;
 
 namespace RxSandbox
@@ -20,10 +23,13 @@ namespace RxSandbox
 
             if (IsInDesignMode())
             {
-                _history.Add(new Notification<string>.OnNext("a"));
-                _history.Add(new Notification<string>.OnNext("b"));
-                _history.Add(new Notification<string>.OnNext("c"));
-                _history.Add(new Notification<string>.OnCompleted());
+               
+
+
+                //_history.Add(new Notification<string>.OnNext("a"));
+                //_history.Add(new Notification<string>.OnNext("b"));
+                //_history.Add(new Notification<string>.OnNext("c"));
+                //_history.Add(new Notification<string>.OnCompleted());
             }
         }
 
@@ -246,7 +252,7 @@ namespace RxSandbox
         {
             if (!_cleanedUp)
             {
-                Inputs.OfType<IDisposable>().Run(d => d.Dispose());
+                Inputs.OfType<IDisposable>().ForEach(d => d.Dispose());
                 if (Output != null)
                     Output.Dispose();
                 if (_instance != null)

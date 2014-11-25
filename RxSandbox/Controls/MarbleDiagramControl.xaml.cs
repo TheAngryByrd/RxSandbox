@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Reactive;
+using System.Reactive.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Linq;
@@ -44,11 +46,12 @@ namespace RxSandbox
 
             if (@new != null)
             {
-                var q =
+                IEnumerable<IObservable<EventPattern<NotifyCollectionChangedEventArgs>>> q =
                     from s in @new.GetSeries()
-                    select Observable.FromEvent<NotifyCollectionChangedEventArgs>(s.Marbles, "CollectionChanged");
+                    select Observable.FromEventPattern<NotifyCollectionChangedEventArgs>(s.Marbles, "CollectionChanged");
+                
 
-                _disposable = q.Merge().ObserveOnDispatcher().Subscribe(CollectionChanged);
+                _disposable = q.Merge().ObserveOnDispatcher().Subscribe(x => CollectionChanged(x.Sender, x.EventArgs));
                 
                 RepaintDefinition();
             }
@@ -58,10 +61,9 @@ namespace RxSandbox
         private readonly Dictionary<Series, int> _seriesRows = new Dictionary<Series, int>();
 	    private IDisposable _disposable;
 
-	    private void CollectionChanged(IEvent<NotifyCollectionChangedEventArgs> b)
+        private void CollectionChanged(object sender, NotifyCollectionChangedEventArgs eventArgs)
         {
-            object sender = b.Sender;
-            NotifyCollectionChangedEventArgs e = b.EventArgs;
+            NotifyCollectionChangedEventArgs e = eventArgs;
             if (e.Action == NotifyCollectionChangedAction.Add)
             {
                 var collection = sender as ObservableCollection<Marble>;
@@ -145,10 +147,9 @@ namespace RxSandbox
 
             foreach (var v in q)
             {
-                var @event = Event.Create(v.s.Marbles,
-                    new NotifyCollectionChangedEventArgs( NotifyCollectionChangedAction.Add, v.m));
+               
                 
-                CollectionChanged(@event);
+                CollectionChanged(v.s.Marbles, new NotifyCollectionChangedEventArgs( NotifyCollectionChangedAction.Add, v.m));
             }
         }
 

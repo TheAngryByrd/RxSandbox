@@ -4,6 +4,8 @@ using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.ComponentModel;
+using System.Reactive;
+using System.Reactive.Linq;
 
 namespace RxSandbox
 {
@@ -51,16 +53,16 @@ namespace RxSandbox
 
             return ExpressionDefinition.Create(expression);
         }
+        //TODO: ForkJoin
+        //[Expression]
+        //public static ExpressionDefinition ForkJoin()
+        //{
+        //    Expression<Func<IObservable<string>, IObservable<string>,
+        //        IObservable<string>>> expression
+        //            = (a, b) => a.ForkJoin(b, (x, y) => x + " - " + y);
 
-        [Expression]
-        public static ExpressionDefinition ForkJoin()
-        {
-            Expression<Func<IObservable<string>, IObservable<string>,
-                IObservable<string>>> expression
-                    = (a, b) => a.ForkJoin(b, (x, y) => x + " - " + y);
-
-            return ExpressionDefinition.Create(expression);
-        }
+        //    return ExpressionDefinition.Create(expression);
+        //}
 
         [Expression]
         public static ExpressionDefinition Concat()
@@ -377,11 +379,11 @@ group s by s.Length
         {
             Expression<Func<IObservable<string>,
                 IObservable<string>>> expression
-                    = a => a.BufferWithCount(3).
+                    = a => a.Buffer(3).
                         Select(i => string.Join(",", i.ToArray()));
 
             var @operator = ReflectionHelper.GetMethod(
-                () => Observable.BufferWithCount<string>(null,3));
+                () => Observable.Buffer<string>(null,3));
 
             return ExpressionDefinition.Create(expression, 
                 new ExpressionSettings{Operator = @operator});
@@ -392,11 +394,11 @@ group s by s.Length
         {
             Expression<Func<IObservable<string>,
                 IObservable<string>>> expression
-                    = a => a.BufferWithTime(TimeSpan.FromSeconds(3)).
+                    = a => a.Buffer(TimeSpan.FromSeconds(3)).
                         Select(i => string.Join(",", i.ToArray()));
 
             var @operator = ReflectionHelper.GetMethod(
-                () => Observable.BufferWithTime<string>(null,TimeSpan.FromSeconds(3)));
+                () => Observable.Buffer<string>(null,TimeSpan.FromSeconds(3)));
 
             return ExpressionDefinition.Create(expression,
                 new ExpressionSettings { Operator = @operator });

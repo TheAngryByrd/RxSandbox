@@ -2,6 +2,7 @@
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Reactive;
 using System.Xml.Serialization;
 using System.Collections;
 using System.Windows.Markup;
