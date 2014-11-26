@@ -20,7 +20,7 @@ namespace RxSandbox
 
         public static IEnumerable<Series> GetSeries(this Diagram diagram)
         {
-            return diagram.Inputs.StartWith(diagram.Output);
+            return diagram.Inputs.StartWith(diagram.Output.ToArray());
         }
     }
 

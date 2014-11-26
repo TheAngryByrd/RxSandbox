@@ -65,11 +65,12 @@ namespace RxSandbox
         [XmlElement("Input")]
         public ObservableCollection<Series> Inputs { get; set; }
 
-        public Series Output { get; set; }
+        public ObservableCollection<Series> Output { get; set; }
 
         public Diagram()
         {
             Inputs = new ObservableCollection<Series>();
+            Output = new ObservableCollection<Series>(new []{new Series()});
         }
     }
     

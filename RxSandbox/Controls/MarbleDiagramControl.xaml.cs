@@ -119,7 +119,7 @@ namespace RxSandbox
             var brush = new BrushConverter().ConvertFromString("#FF1E1E90") as Brush;
             int rowIndex = 0;
 
-            foreach (var series in Diagram.Inputs.Concat(new [] {Diagram.Output}) )
+            foreach (var series in Diagram.Inputs.Concat(Diagram.Output) )
             {
                 var row = new RowDefinition { Height = new GridLength(40) };
 

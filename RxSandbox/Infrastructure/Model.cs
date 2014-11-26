@@ -334,7 +334,7 @@ namespace RxSandbox
             Diagram = new Diagram
             {
                 Inputs = new ObservableCollection<Series>(Inputs.Select(g => new Series { Name = g.Name })),
-                Output = new Series()
+                Output = new ObservableCollection<Series>(new []{new Series{Name = Output.Name}}),
             };
 
             _diagramSeries = Diagram.ToSeriesDictionary();
