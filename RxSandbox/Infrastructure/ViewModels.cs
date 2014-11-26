@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Concurrency;
+using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using RxSandbox.Infrastructure;
 
@@ -142,10 +143,11 @@ namespace RxSandbox
 
         private IDisposable _disposable;
 
-        public ObservableOutputVM(ObservableSource generator)
+        public ObservableOutputVM(params ObservableSource[] generator)
             : this()
         {
-            _disposable = generator.ObservableStr.Materialize().ObserveOnDispatcher().Subscribe(_history.Add);
+            
+            _disposable = new CompositeDisposable(generator.Select(g => g.ObservableStr.Materialize().ObserveOnDispatcher().Subscribe(_history.Add)));
         }
 
         protected override void OnDispose()
@@ -167,6 +169,7 @@ namespace RxSandbox
         // public
         public ExpressionDefinition Definition { get; private set; }
         public ReadOnlyObservableCollection<ObservableInputVM> Inputs { get; private set; }
+
         private ObservableOutputVM output;
         public ObservableOutputVM Output
         {
@@ -225,10 +228,11 @@ namespace RxSandbox
 
             // input & output
             _inputs.Clear();
-            foreach (var input in _instance.Inputs.Select(g => new ObservableInputVM(g)))
-                _inputs.Add(input);
-
-            Output = new ObservableOutputVM(_instance.Output);
+            _instance.Inputs.Select(g => new ObservableInputVM(g)).ForEach(_inputs.Add);
+            //_instance.Output.Select(g => new ObservableOutputVM(g)).ForEach(_outputs.Add);
+     
+            //TODO: Multiple outputs
+            Output = new ObservableOutputVM(_instance.Output[0]);
 
             Diagram = _instance.Diagram;
         }

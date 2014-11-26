@@ -33,7 +33,7 @@
 		
 
 		
-		<GroupBox Header="Inputs" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1">
+		    <GroupBox Header="Inputs" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1">
     			<ItemsControl ItemsSource="{Binding Inputs}">
     				<ItemsControl.ItemTemplate>
     					<DataTemplate>

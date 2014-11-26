@@ -286,7 +286,7 @@ namespace RxSandbox
 
         public ExpressionDefinition Definition { get; private set; }
         public ReadOnlyCollection<ObservableInput> Inputs { get; private set; }
-        public ObservableSource Output { get; private set; }
+        public ReadOnlyCollection<ObservableSource> Output { get; private set; }
 
         private ExpressionInstance()
         { }
@@ -319,7 +319,7 @@ namespace RxSandbox
             {
                 Definition = definition,
                 Inputs = new ReadOnlyObservableCollection<ObservableInput>(inputs),
-                Output = output,
+                Output = new ReadOnlyObservableCollection<ObservableSource>(new ObservableCollection<ObservableSource>(new []{output})),
                 
             }.SetUpDiagram();
         }
@@ -334,14 +334,14 @@ namespace RxSandbox
             Diagram = new Diagram
             {
                 Inputs = new ObservableCollection<Series>(Inputs.Select(g => new Series { Name = g.Name })),
-                Output = new ObservableCollection<Series>(new []{new Series{Name = Output.Name}}),
+                Output = new ObservableCollection<Series>(Output.Select(g => new Series { Name = g.Name })),
             };
 
             _diagramSeries = Diagram.ToSeriesDictionary();
 
             var _notifications =
                 (
-                    from g in Inputs.OfType<ObservableSource>().Concat(new []{Output})
+                    from g in Inputs.OfType<ObservableSource>().Concat(Output)
                     select
                         from v in g.ObservableStr.Materialize()
                         select new Record(g.Name, v)
